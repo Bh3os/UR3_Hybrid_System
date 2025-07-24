@@ -1,20 +1,20 @@
 # UR3 Hybrid Deep Learning System - Complete User Guide
 
-## 🎯 Project Overview
+## Project Overview
 
 This hybrid architecture for UR3 robotic grasping combines **cutting-edge deep reinforcement learning** with **real-time physics simulation**, split across two optimized environments:
 
-- **🖥️ Host Machine (Windows)**: RTX A6000 GPU for neural network inference, training, and high-performance computing
-- **🤖 Virtual Machine (Ubuntu)**: ROS Melodic + Webots for realistic robot simulation and control
+- ** Host Machine (Windows)**: RTX A6000 GPU for neural network inference, training, and high-performance computing
+- ** Virtual Machine (Ubuntu)**: ROS Melodic + Webots for realistic robot simulation and control
 
 **Key Features:**
-- 🚀 **High Performance**: Leverages RTX A6000 for 100+ FPS inference
-- 🔄 **Real-time Communication**: Sub-5ms latency network communication
-- 🧠 **Advanced AI**: Enhanced CNN with attention mechanisms and reinforcement learning
-- 🎮 **Full Simulation**: Complete UR3 robot with kinematics, vision, and physics
-- 📊 **Comprehensive Monitoring**: Real-time performance metrics and training visualization
+-  **High Performance**: Leverages RTX A6000 for 100+ FPS inference
+-  **Real-time Communication**: Sub-5ms latency network communication
+-  **Advanced AI**: Enhanced CNN with attention mechanisms and reinforcement learning
+-  **Full Simulation**: Complete UR3 robot with kinematics, vision, and physics
+-  **Comprehensive Monitoring**: Real-time performance metrics and training visualization
 
-## 🏗️ Enhanced System Architecture
+##  System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
@@ -23,34 +23,33 @@ This hybrid architecture for UR3 robotic grasping combines **cutting-edge deep r
 │     HOST SYSTEM (Windows)   │        VM SYSTEM (Ubuntu 18.04)          │
 │        RTX A6000 GPU        │       ROS Melodic + Webots               │
 ├─────────────────────────────┼───────────────────────────────────────────┤
-│ 🧠 Enhanced Neural Network  │ 🤖 UR3 Kinematics Controller             │
-│ 🎯 Multi-Head CNN+RL        │ 📹 Enhanced Camera Handler               │
-│ ⚡ GPU Inference Server     │ 🎮 Webots Physics Engine                 │
-│ 📊 Training Pipeline        │ 🔄 Simulation Client                     │
-│ 📈 Performance Monitoring   │ 🌐 ROS Integration                       │
-│ 💾 Model Management         │ 🏗️ Motion Planning                       │
+│  Enhanced Neural Network    │  UR3 Kinematics Controller             │
+│  Multi-Head CNN+RL          │  Enhanced Camera Handler               │
+│  GPU Inference Server       │  Webots Physics Engine                 │
+│  Training Pipeline          │  Simulation Client                     │
+│  Performance Monitoring     │  ROS Integration                       │
+│  Model Management           │  Motion Planning                       │
 └─────────────────────────────┴───────────────────────────────────────────┘
-                    🌐 Network Communication (TCP/Socket)
-                      📡 RGBD Images → 🎯 Grasp Predictions
+                     Network Communication (TCP/Socket)
+                       RGBD Images →  Grasp Predictions
 ```
 
-## 📁 Enhanced Project Structure
+## Project Structure
 
 ```
 UR3_Hybrid_System/
-├── 📖 README.md                          # Complete user guide (this file)
-├── 🚀 QUICK_START.md                     # 5-minute setup guide
+├──  QUICK_START.md                     # 5-minute setup guide
 │
-├── 🖥️ host_gpu_system/                   # WINDOWS HOST SYSTEM
-│   ├── 📋 README.md                      # Host-specific documentation
-│   ├── 📦 requirements.txt               # Python dependencies (PyTorch, etc.)
-│   ├── 🧪 test_gpu_setup.py              # Comprehensive test suite
-│   ├── 🧪 integration_test.py            # Integration test for all modules
-│   ├── ⚙️ config/
+├──  host_gpu_system/                   # WINDOWS HOST SYSTEM
+│   ├──  README.md                      # Host-specific documentation
+│   ├──  requirements.txt               # Python dependencies (PyTorch, etc.)
+│   ├──  test_gpu_setup.py              # Comprehensive test suite
+│   ├──  integration_test.py            # Integration test for all modules
+│   ├──  config/
 │   │   ├── network_config.yaml           # Network & communication settings
 │   │   ├── model_config.yaml             # Neural network configuration
 │   │   └── training_config.yaml          # Training hyperparameters
-│   ├── 🧠 src/
+│   ├──  src/
 │   │   ├── gpu_server.py                 # Main GPU inference server
 │   │   ├── enhanced_neural_network.py    # Advanced CNN with attention
 │   │   ├── training_pipeline.py          # Complete training system
@@ -59,41 +58,38 @@ UR3_Hybrid_System/
 │   │       ├── logger.py                 # Advanced logging system
 │   │       ├── metrics.py                # Performance monitoring
 │   │       └── visualization.py          # Training visualization
-│   ├── 🤖 models/                        # Neural network models
+│   ├──  models/                        # Neural network models
 │   │   ├── checkpoints/                  # Training checkpoints
 │   │   └── final/                        # Production models
-│   └── 📊 data/                          # Training & testing data
+│   └──  data/                          # Training & testing data
 │       ├── training_images/              # Training dataset
 │       ├── logs/                         # System logs
 │       └── results/                      # Training results
 │
-├── 🤖 vm_simulation_system/              # UBUNTU VM SYSTEM
-│   ├── 📋 README.md                      # VM-specific documentation
-│   ├── 📦 requirements.txt               # Python/ROS dependencies
-│   ├── 🛠️ setup.sh                       # Automated Ubuntu setup
-│   ├── 🧪 test_vm_setup.py               # VM validation tests
-│   ├── ⚙️ config/
+├──  vm_simulation_system/              # UBUNTU VM SYSTEM
+│   ├──  README.md                      # VM-specific documentation
+│   ├──  requirements.txt               # Python/ROS dependencies
+│   ├──  setup.sh                       # Automated Ubuntu setup
+│   ├──  test_vm_setup.py               # VM validation tests
+│   ├──  config/
 │   │   ├── network_config.yaml           # Communication settings
 │   │   ├── robot_config.yaml             # UR3 robot parameters
 │   │   └── camera_config.yaml            # Camera & vision settings
-│   ├── 🤖 src/
+│   ├──  src/
 │   │   ├── simulation_client.py          # Main VM simulation client
 │   │   ├── enhanced_robot_controller.py  # Advanced UR3 kinematics
 │   │   ├── enhanced_camera_handler.py    # RGBD camera processing
 │   │   └── webots_bridge.py              # Webots integration
-│   ├── 🚀 launch/                        # ROS launch files
+│   ├──  launch/                        # ROS launch files
 │   │   ├── ur3_hybrid_system.launch      # Complete system launcher
 │   │   └── test_system.launch            # Testing & validation
-│   └── 🌍 webots_worlds/                 # Webots simulation worlds
-│       └── ur3_grasping_world.wbt        # Main simulation environment
-│
-└── 🔄 shared_resources/                  # SHARED COMPONENTS
-    ├── 📚 protocols.md                   # Communication protocols
-    ├── 🏗️ data_formats.py                # Shared data structures
-    └── 🧪 network_test.py                # Connection validation
+│   └──  webots_worlds/                 # Webots simulation worlds
+│      └── ur3_grasping_world.wbt        # Main simulation environment
+│── 📋 README.md  
+
 ```
 
-## 🚀 Complete Setup Guide
+##  Complete Setup Guide
 
 ### Prerequisites
 
@@ -211,7 +207,7 @@ telnet <HOST_IP> 8888       # Test port connectivity
 
 ### Step 4: Launch the Complete System
 
-**🖥️ On Host Machine (Windows):**
+** On Host Machine (Windows):**
 ```powershell
 cd host_gpu_system
 python src/gpu_server.py
@@ -222,7 +218,7 @@ python src/gpu_server.py
 # INFO - Ready to accept connections...
 ```
 
-**🤖 On VM (Ubuntu):**
+** On VM (Ubuntu):**
 ```bash
 # Terminal 1: Start ROS Master
 roscore
@@ -238,7 +234,7 @@ roslaunch launch/ur3_hybrid_system.launch
 # INFO - All systems ready!
 ```
 
-## 🎮 System Operation & Workflow
+##  System Operation & Workflow
 
 ### Training Mode
 ```bash
@@ -269,7 +265,7 @@ cd vm_simulation_system
 python src/simulation_client.py --mode data_collection --episodes 1000
 ```
 
-## 📊 Advanced Features
+##  Advanced Features
 
 ### Enhanced Neural Network
 - **Multi-Head Architecture**: Grasp classification, 6-DOF pose regression, quality prediction
@@ -289,7 +285,7 @@ python src/simulation_client.py --mode data_collection --episodes 1000
 - **Grasp Planning**: Multiple grasp candidates with quality scoring
 - **Camera Calibration**: Automatic intrinsic and extrinsic calibration
 
-## 🔧 Troubleshooting Guide
+##  Troubleshooting Guide
 
 ### Performance Issues
 
@@ -350,7 +346,7 @@ export ROS_IP=$(hostname -I | awk '{print $1}')
 # Update path in launch files
 ```
 
-## 📈 Performance Benchmarks
+##  Performance Benchmarks
 
 **Expected Performance Metrics:**
 - **GPU Inference**: 50-150 FPS (depending on batch size)
@@ -365,7 +361,7 @@ export ROS_IP=$(hostname -I | awk '{print $1}')
 - Enable GPU monitoring during training
 - Use mixed precision for faster training
 
-## 📚 Additional Resources
+##  Additional Resources
 
 ### Documentation
 - [`host_gpu_system/README.md`](host_gpu_system/README.md) - Detailed host system guide
@@ -384,7 +380,7 @@ export ROS_IP=$(hostname -I | awk '{print $1}')
 - **Robot**: `config/robot_config.yaml` - UR3 robot configuration
 - **Training**: `config/training_config.yaml` - ML hyperparameters
 
-## 🎯 Usage Scenarios
+##  Usage Scenarios
 
 ### 1. Research & Development
 ```bash
@@ -420,21 +416,21 @@ export ROS_IP=$(hostname -I | awk '{print $1}')
 
 ---
 
-## 🚀 Success Indicators
+##  Success Indicators
 
 When everything is working correctly, you should see:
 
-✅ **Host System**: GPU server running at 100+ FPS inference  
-✅ **VM System**: Smooth Webots simulation with real-time robot control  
-✅ **Network**: Sub-5ms communication latency between systems  
-✅ **Training**: Convergent learning curves in TensorBoard  
-✅ **Performance**: 90%+ grasp success rate in simulation  
+ **Host System**: GPU server running at 100+ FPS inference  
+ **VM System**: Smooth Webots simulation with real-time robot control  
+ **Network**: Sub-5ms communication latency between systems  
+ **Training**: Convergent learning curves in TensorBoard  
+ **Performance**: 90%+ grasp success rate in simulation  
 
 ---
 
-**🎉 Congratulations! You now have a state-of-the-art hybrid deep learning system for robotic grasping that leverages the full power of your RTX A6000 GPU while maintaining compatibility with ROS and Webots!**
+** Congratulations! You now have a state-of-the-art hybrid deep learning system for robotic grasping that leverages the full power of your RTX A6000 GPU while maintaining compatibility with ROS and Webots!**
 
-**🔬 This system represents the cutting edge of hybrid AI architectures, combining the best of high-performance computing with realistic robotics simulation.**
+**This system represents the cutting edge of hybrid AI architectures, combining the best of high-performance computing with realistic robotics simulation.**
 ```bash
 # Navigate to VM system directory
 cd vm_simulation_system
@@ -495,7 +491,7 @@ python src/simulation_client.py
 - ✅ Robot action execution
 - ✅ Reward calculation and episode management
 
-## 🌐 Network Communication
+##  Network Communication
 
 ### Connection Flow
 ```
@@ -513,7 +509,7 @@ VM → Host: Training feedback (rewards, states)
 2. **Firewall Settings**: Allow port 8888 on both systems
 3. **IP Configuration**: Static IPs recommended for stability
 
-## 📊 Performance Specifications
+##  Performance Specifications
 
 ### Expected Performance
 - **GPU Inference Speed**: 50-100 FPS on RTX A6000
@@ -527,7 +523,7 @@ VM → Host: Training feedback (rewards, states)
 - **VM RAM**: 32GB for ROS + Webots
 - **Host RAM**: Remainder for ML frameworks
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -564,14 +560,14 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 - Enable hardware acceleration in VM settings
 - Optimize network MTU size
 
-## 📚 Additional Documentation
+##  Additional Documentation
 
 - [`host_gpu_system/README.md`](host_gpu_system/README.md) - Detailed host setup
 - [`vm_simulation_system/README.md`](vm_simulation_system/README.md) - Detailed VM setup  
 - [`shared_resources/protocols.md`](shared_resources/protocols.md) - Communication protocols
 - [`SETUP_GUIDE.md`](SETUP_GUIDE.md) - Step-by-step installation guide
 
-## 🎯 Usage Workflow
+##  Usage Workflow
 
 1. **Development Phase**: Code and test neural networks on host
 2. **Integration Phase**: Set up communication between host and VM
@@ -579,7 +575,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 4. **Evaluation Phase**: Test complete system performance
 5. **Deployment Phase**: Optimize for production use
 
-## 📞 Support
+##  Support
 
 For issues with this hybrid system:
 1. Check the specific README files in each component directory
@@ -589,4 +585,4 @@ For issues with this hybrid system:
 
 ---
 
-**🚀 This hybrid architecture provides optimal performance by leveraging your RTX A6000 GPU on the host while maintaining full ROS/Webots compatibility in the VM!**
+**This hybrid architecture provides optimal performance by leveraging your RTX A6000 GPU on the host while maintaining full ROS/Webots compatibility in the VM!**
