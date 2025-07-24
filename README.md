@@ -20,15 +20,15 @@ This hybrid architecture for UR3 robotic grasping combines **cutting-edge deep r
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                         UR3 Hybrid Deep Learning System                 │
 ├─────────────────────────────┬───────────────────────────────────────────┤
-│     HOST SYSTEM (Windows)   │        VM SYSTEM (Ubuntu 18.04)          │
-│        RTX A6000 GPU        │       ROS Melodic + Webots               │
+│     HOST SYSTEM (Windows)   │        VM SYSTEM (Ubuntu 18.04)           │
+│        RTX A6000 GPU        │       ROS Melodic + Webots                │
 ├─────────────────────────────┼───────────────────────────────────────────┤
-│  Enhanced Neural Network    │  UR3 Kinematics Controller             │
-│  Multi-Head CNN+RL          │  Enhanced Camera Handler               │
-│  GPU Inference Server       │  Webots Physics Engine                 │
-│  Training Pipeline          │  Simulation Client                     │
-│  Performance Monitoring     │  ROS Integration                       │
-│  Model Management           │  Motion Planning                       │
+│  Enhanced Neural Network    │  UR3 Kinematics Controller                │
+│  Multi-Head CNN+RL          │  Enhanced Camera Handler                  │
+│  GPU Inference Server       │  Webots Physics Engine                    │
+│  Training Pipeline          │  Simulation Client                        │
+│  Performance Monitoring     │  ROS Integration                          │
+│  Model Management           │  Motion Planning                          │
 └─────────────────────────────┴───────────────────────────────────────────┘
                      Network Communication (TCP/Socket)
                        RGBD Images →  Grasp Predictions
