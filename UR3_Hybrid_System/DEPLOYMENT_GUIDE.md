@@ -1,6 +1,6 @@
 # UR3 Hybrid System - Deployment Guide
 
-## 🚀 Quick Start Deployment
+## Quick Start Deployment
 
 ### Host GPU System (Windows/Linux with GPU)
 1. Navigate to host_gpu_system directory
@@ -12,7 +12,7 @@
 2. Run: `python3 launch_vm_client.py`
 3. Client will connect to host automatically
 
-## 📋 Requirements
+## Requirements
 
 ### Host System:
 - Python 3.8+
@@ -29,7 +29,7 @@
 - ROS (optional - system works without ROS)
 - Webots (optional - system works in simulation mode)
 
-## 🔧 Configuration
+## Configuration
 
 ### Network Configuration:
 - Default host IP: 192.168.1.1
@@ -44,7 +44,7 @@
 - Robot parameters in vm_simulation_system/config/robot_config.yaml
 - Camera settings in vm_simulation_system/config/camera_config.yaml
 
-## 🧪 Testing
+## Testing
 
 Run integration tests:
 ```bash
@@ -58,14 +58,14 @@ cd vm_simulation_system && python3 vm_integration_test.py
 cd .. && python3 end_to_end_test.py
 ```
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 1. **Connection refused**: Check firewall and IP addresses
 2. **Import errors**: Ensure all dependencies are installed
 3. **GPU not found**: System will fallback to CPU automatically
 4. **ROS errors**: System works without ROS in simulation mode
 
-## 📞 Support
+## Support
 
 Check the log files in data/logs/ for detailed error information.
 All components have comprehensive logging for debugging.
