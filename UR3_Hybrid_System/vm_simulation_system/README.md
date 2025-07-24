@@ -1,9 +1,9 @@
 # VM Simulation System Documentation
 
-## 🤖 Overview
+##   Overview
 This module runs on your **Ubuntu 18.04 VM** and handles the Webots simulation, ROS integration, and robot control for the UR3 grasping system.
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 VM Simulation System (Ubuntu 18.04 + ROS Melodic)
@@ -14,7 +14,7 @@ VM Simulation System (Ubuntu 18.04 + ROS Melodic)
 └── ROS Node Manager ─────────── ROS topics & services
 ```
 
-## 📁 Directory Structure
+##  Directory Structure
 
 ```
 vm_simulation_system/
@@ -24,7 +24,7 @@ vm_simulation_system/
 ├── package.xml           # ROS package configuration
 │
 ├── src/                  # Source code
-│   ├── simulation_client.py   # 🌟 Main VM client
+│   ├── simulation_client.py   #  Main VM client
 │   ├── enhanced_robot_controller.py    # Enhanced UR3 robot control with full kinematics
 │   ├── enhanced_camera_handler.py      # Advanced camera data processing and vision
 │   ├── webots_bridge.py       # Webots integration
@@ -56,7 +56,7 @@ vm_simulation_system/
     └── GraspCommand.msg      # Grasp command message
 ```
 
-## ⚙️ Module Components
+##  Module Components
 
 ### 1. Simulation Client (`src/simulation_client.py`)
 **Purpose**: Main communication hub connecting to host GPU server
@@ -120,7 +120,7 @@ vm_simulation_system/
 - `supervisor.py`: Environment supervision
 - `watchdog.py`: System health monitoring
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Ubuntu 18.04 LTS (VM with 32GB RAM, 16 CPU cores)
@@ -213,7 +213,7 @@ camera:
   depth_range: [0.1, 2.0]
 ```
 
-## 🏃‍♂️ Running the System
+## Running the System
 
 ### Start ROS Core and Simulation
 ```bash
@@ -237,7 +237,7 @@ python3 src/simulation_client.py
 roslaunch vm_simulation_system full_system.launch host_ip:=192.168.1.1
 ```
 
-## 📊 ROS Topics and Services
+## ROS Topics and Services
 
 ### Published Topics
 - `/camera/image_raw` (sensor_msgs/Image): RGB camera data
@@ -255,7 +255,7 @@ roslaunch vm_simulation_system full_system.launch host_ip:=192.168.1.1
 - `/simulation/randomize` (std_srvs/Empty): Randomize environment
 - `/gripper/grasp` (std_srvs/SetBool): Execute grasp action
 
-## 🔧 Configuration Options
+## Configuration Options
 
 ### Network Settings
 - **Host IP**: Windows machine IP address
@@ -275,7 +275,7 @@ roslaunch vm_simulation_system full_system.launch host_ip:=192.168.1.1
 - **Environment Randomization**: Object placement variety
 - **Reward Function**: Training feedback parameters
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -334,7 +334,7 @@ pip3 install -r requirements.txt
 3. **Network**: Use bridged networking for lower latency
 4. **Storage**: Use SSD storage for VM disk files
 
-## 🔗 Integration Points
+## Integration Points
 
 ### Host Communication
 - **Data Sent**: RGBD camera images, robot state, episode information
@@ -356,7 +356,7 @@ image = camera.getImage()
 # Process and send to host...
 ```
 
-## 📈 Expected Performance
+## Expected Performance
 
 With proper VM configuration:
 - **Simulation Speed**: Real-time or faster
@@ -365,7 +365,7 @@ With proper VM configuration:
 - **Episode Duration**: 30-60 seconds
 - **Training Episodes**: 100+ per hour
 
-## 🔄 Maintenance
+## Maintenance
 
 ### Regular Tasks
 - Monitor VM resource usage
@@ -388,4 +388,4 @@ iftop                             # Network traffic
 
 ---
 
-**🤖 This VM system provides the complete ROS/Webots simulation environment while seamlessly communicating with your Windows host for GPU-accelerated deep learning!**
+**This VM system provides the complete ROS/Webots simulation environment while seamlessly communicating with your Windows host for GPU-accelerated deep learning!**
