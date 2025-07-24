@@ -364,9 +364,9 @@ export ROS_IP=$(hostname -I | awk '{print $1}')
 ##  Additional Resources
 
 ### Documentation
-- [`host_gpu_system/README.md`](host_gpu_system/README.md) - Detailed host system guide
-- [`vm_simulation_system/README.md`](vm_simulation_system/README.md) - Complete VM setup
-- [`shared_resources/protocols.md`](shared_resources/protocols.md) - Communication protocols
+- [`host_gpu_system/README.md`](https://github.com/Bh3os/UR3_Hybrid_System/blob/main/UR3_Hybrid_System/host_gpu_system/README.md) - Detailed host system guide
+- [`vm_simulation_system/README.md`](https://github.com/Bh3os/UR3_Hybrid_System/blob/main/UR3_Hybrid_System/vm_simulation_system/README.md) - Complete VM setup
+
 
 ### Code Examples
 - **Training**: `src/training_pipeline.py` - Complete training workflow
