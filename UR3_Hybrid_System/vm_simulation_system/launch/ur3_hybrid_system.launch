@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- UR3 Hybrid System VM Simulation Launch File -->
+  
+  <!-- Arguments -->
+  <arg name="simulation" default="true" />
+  <arg name="use_gpu_server" default="true" />
+  <arg name="gpu_server_host" default="192.168.1.100" />
+  <arg name="gpu_server_port" default="8888" />
+  <arg name="camera_type" default="simulation" />
+  <arg name="robot_config" default="$(find ur3_hybrid_vm)/config/robot_config.yaml" />
+  <arg name="camera_config" default="$(find ur3_hybrid_vm)/config/camera_config.yaml" />
+  
+  <!-- Parameters -->
+  <rosparam file="$(arg robot_config)" command="load" ns="ur3_robot" />
+  <rosparam file="$(arg camera_config)" command="load" ns="camera" />
+  
+  <!-- Webots Simulation -->
+  <group if="$(arg simulation)">
+    <node name="webots_supervisor" pkg="ur3_hybrid_vm" type="webots_supervisor.py" output="screen">
+      <param name="world_file" value="$(find ur3_hybrid_vm)/webots_worlds/ur3_grasping_world.wbt" />
+      <param name="simulation_mode" value="true" />
+    </node>
+    
+    <!-- Webots Camera Service -->
+    <node name="webots_camera_service" pkg="ur3_hybrid_vm" type="webots_camera_service.py" output="screen">
+      <param name="image_topic" value="/camera/rgb/image_raw" />
+      <param name="depth_topic" value="/camera/depth/image_raw" />
+    </node>
+  </group>
+  
+  <!-- Real Camera (if not in simulation) -->
+  <group unless="$(arg simulation)">
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+      <arg name="align_depth" value="true" />
+      <arg name="enable_pointcloud" value="true" />
+    </include>
+  </group>
+  
+  <!-- UR3 Robot Controller -->
+  <node name="ur3_robot_controller" pkg="ur3_hybrid_vm" type="enhanced_robot_controller.py" output="screen">
+    <param name="simulation" value="$(arg simulation)" />
+    <param name="config_path" value="$(arg robot_config)" />
+    <param name="precision" value="0.02" />
+  </node>
+  
+  <!-- Enhanced Camera Handler -->
+  <node name="camera_handler" pkg="ur3_hybrid_vm" type="enhanced_camera_handler.py" output="screen">
+    <param name="simulation" value="$(arg simulation)" />
+    <param name="camera_type" value="$(arg camera_type)" />
+    <param name="config_path" value="$(arg camera_config)" />
+  </node>
+  
+  <!-- Simulation Client (Main Node) -->
+  <node name="simulation_client" pkg="ur3_hybrid_vm" type="simulation_client.py" output="screen">
+    <param name="gpu_server_host" value="$(arg gpu_server_host)" />
+    <param name="gpu_server_port" value="$(arg gpu_server_port)" />
+    <param name="use_gpu_server" value="$(arg use_gpu_server)" />
+    <param name="config_path" value="$(find ur3_hybrid_vm)/config/network_config.yaml" />
+  </node>
+  
+  <!-- TF Static Transforms -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="camera_to_base_link"
+        args="0.5 0 0.8 0 0.785 0 base_link camera_link" />
+  
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_world"
+        args="0 0 0 0 0 0 world base_link" />
+  
+  <!-- RViz Visualization -->
+  <node name="rviz" pkg="rviz" type="rviz" 
+        args="-d $(find ur3_hybrid_vm)/config/ur3_hybrid_visualization.rviz" 
+        output="screen" required="false" />
+  
+  <!-- Robot State Publisher -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find ur3_hybrid_vm)/urdf/ur3_robot.urdf.xacro" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  
+</launch>

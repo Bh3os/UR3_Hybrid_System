@@ -1,0 +1,207 @@
+# UR3 Hybrid Deep Learning System - Git Ignore File
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch & Machine Learning
+*.pth
+*.pt
+*.pkl
+*.model
+checkpoints/
+models/saved/
+models/checkpoints/
+models/final/
+*.onnx
+*.trt
+
+# TensorBoard Logs
+runs/
+logs/
+tensorboard_logs/
+*.tfevents.*
+
+# Training Data & Datasets
+data/grasp_dataset/
+data/training/
+data/collected/
+data/episodes/
+*.npz
+*.hdf5
+*.h5
+
+# ROS
+devel/
+logs/
+build/
+bin/
+msg_gen/
+srv_gen/
+msg/*Action.msg
+msg/*ActionFeedback.msg
+msg/*ActionGoal.msg
+msg/*ActionResult.msg
+msg/*Feedback.msg
+msg/*Goal.msg
+msg/*Result.msg
+msg/_*.py
+build_isolated/
+devel_isolated/
+
+# Webots
+*.wbproj
+*.wbt.bak
+webots_log.txt
+/Webots/worlds/*.wbt.backup*
+
+# Camera & Image Data
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.tif
+*.gif
+!icons/*.png
+!textures/*.jpg
+*.avi
+*.mp4
+*.mov
+*.mkv
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.spyderproject
+.spyproject
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.env
+.venv
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# Configuration (keep templates, ignore local configs)
+*_local.yaml
+*_dev.yaml
+*_production.yaml
+config/local/
+secrets/
+.secrets
+
+# Results & Output
+results/
+output/
+*.log
+*.out
+*.err
+experiments/
+plots/
+figures/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.temp
+*.backup
+*.bak
+
+# Archive & Compressed Files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# CUDA & GPU
+*.cubin
+*.ptx
+
+# Node.js (if any web interfaces)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Documentation Build
+docs/_build/
+site/
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Profiling
+*.prof
+
+# Memory dumps
+*.stackdump
+
+# Local development
+.local/
+local_test/
+sandbox/
+
+# Hardware-specific
+*.so.*
+*.dylib
+*.dll
+
+# Backup files
+*~
+*.orig
+*.rej
+
+# Keep important empty directories
+!data/.gitkeep
+!models/.gitkeep
+!logs/.gitkeep
+!results/.gitkeep

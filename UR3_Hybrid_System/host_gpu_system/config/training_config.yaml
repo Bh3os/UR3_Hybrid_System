@@ -1,0 +1,30 @@
+model:
+  input_channels: 4
+  input_size: [480, 640]
+  num_grasp_classes: 4
+  output_6dof: true
+  use_attention: true
+  learning_rate: 0.0001
+  gamma: 0.99
+  pretrained_weights: null
+
+training:
+  batch_size: 16
+  num_epochs: 100
+  validation_split: 0.2
+  early_stopping_patience: 10
+  lr_scheduler: cosine
+  weight_decay: 0.00001
+  gradient_clipping: 1.0
+
+data:
+  dataset_path: data/grasp_dataset
+  augmentation: true
+  num_workers: 4
+  pin_memory: true
+
+logging:
+  log_interval: 10
+  save_interval: 500
+  tensorboard_dir: runs/ur3_training
+  checkpoint_dir: models/checkpoints

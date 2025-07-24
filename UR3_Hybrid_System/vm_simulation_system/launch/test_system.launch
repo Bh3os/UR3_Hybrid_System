@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- UR3 Hybrid System - GPU Server Test Launch -->
+  
+  <!-- Test Connection to Host GPU Server -->
+  <node name="gpu_server_test" pkg="ur3_hybrid_vm" type="test_gpu_connection.py" output="screen">
+    <param name="gpu_server_host" value="192.168.1.100" />
+    <param name="gpu_server_port" value="8888" />
+    <param name="test_image_path" value="$(find ur3_hybrid_vm)/data/test_images/test_rgb.png" />
+  </node>
+  
+  <!-- Camera Only Test -->
+  <node name="camera_test" pkg="ur3_hybrid_vm" type="test_camera.py" output="screen">
+    <param name="simulation" value="true" />
+    <param name="camera_type" value="simulation" />
+    <param name="save_images" value="true" />
+    <param name="output_dir" value="$(find ur3_hybrid_vm)/data/captured_images" />
+  </node>
+  
+  <!-- Robot Controller Test -->
+  <node name="robot_test" pkg="ur3_hybrid_vm" type="test_robot_controller.py" output="screen">
+    <param name="simulation" value="true" />
+    <param name="test_movements" value="true" />
+    <param name="test_kinematics" value="true" />
+  </node>
+
+</launch>
