@@ -6,7 +6,7 @@
 > Unnecessary files archived, tests organized in `/tests/` directory. 
 > All core systems verified and ready for deployment.
 
-## ⚡ Prerequisites Check
+## Prerequisites Check
 
 -  **Host**: Windows 10/11 + NVIDIA RTX A6000 + 64GB RAM (or macOS for development)
 -  **VM**: Ubuntu 18.04 LTS + 32GB allocated RAM + 200GB disk  
