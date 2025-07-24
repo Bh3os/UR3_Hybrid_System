@@ -1,19 +1,19 @@
-# 🚀 UR3 Hybrid System - Quick Start Guide
+# UR3 Hybrid System - Quick Start Guide
 
 **Get your UR3 hybrid deep learning system running in 15 minutes!**
 
-> **✅ PROJECT CLEANED & ORGANIZED**  
+> **PROJECT CLEANED & ORGANIZED**  
 > Unnecessary files archived, tests organized in `/tests/` directory. 
 > All core systems verified and ready for deployment.
 
 ## ⚡ Prerequisites Check
 
-- ✅ **Host**: Windows 10/11 + NVIDIA RTX A6000 + 64GB RAM (or macOS for development)
-- ✅ **VM**: Ubuntu 18.04 LTS + 32GB allocated RAM + 200GB disk  
-- ✅ **Network**: Both systems on same network or bridged connection
-- ✅ **Python**: Python 3.7+ on both systems
+-  **Host**: Windows 10/11 + NVIDIA RTX A6000 + 64GB RAM (or macOS for development)
+-  **VM**: Ubuntu 18.04 LTS + 32GB allocated RAM + 200GB disk  
+-  **Network**: Both systems on same network or bridged connection
+-  **Python**: Python 3.7+ on both systems
 
-## 🖥️ Host Setup (5 minutes)
+## Host Setup (5 minutes)
 
 ```bash
 # 1. Navigate to host system directory
@@ -33,9 +33,9 @@ cd ../tests
 python3 gpu_integration_test.py
 ```
 
-**✅ Expected Result**: All GPU tests should pass with comprehensive system verification.
+**Expected Result**: All GPU tests should pass with comprehensive system verification.
 
-## 🤖 VM Setup (5 minutes)
+## VM Setup (5 minutes)
 
 ```bash
 # 1. Navigate to VM system directory
@@ -52,17 +52,17 @@ pip3 install numpy pyyaml opencv-python pillow
 python3 vm_integration_test.py
 ```
 
-**✅ Expected Result**: All 10 tests should pass:
+**Expected Result**: All 10 tests should pass:
 ```
-🎉 ALL VM SIMULATION TESTS PASSED!
-🤖 Robot Control: ✅     📷 Camera System: ✅
-🌍 Webots Bridge: ✅     🎮 Simulation Client: ✅  
-🔄 Data Flow: ✅
+ ALL VM SIMULATION TESTS PASSED!
+ Robot Control: ✅      Camera System: ✅
+ Webots Bridge: ✅      Simulation Client: ✅  
+ Data Flow: ✅
 ```
 
-> **📝 Note**: System works in simulation mode without ROS/Webots - perfect for development!
+> **Note**: System works in simulation mode without ROS/Webots - perfect for development!
 
-## 🌐 Network Configuration (2 minutes)
+## Network Configuration (2 minutes)
 
 **Find your IP addresses:**
 ```bash
@@ -91,7 +91,7 @@ communication:
   retry_attempts: 3
 ```
 
-## 🚀 Launch System (3 minutes)
+## Launch System (3 minutes)
 
 **Step 1 - Start Host GPU Server:**
 ```bash
@@ -99,7 +99,7 @@ communication:
 cd host_gpu_system
 python3 src/gpu_server.py
 ```
-**Wait for**: `🖥️ GPU Server started on 0.0.0.0:8888`
+**Wait for**: `GPU Server started on 0.0.0.0:8888`
 
 **Step 2 - Start VM Simulation:**
 
@@ -120,9 +120,9 @@ cd vm_simulation_system
 python3 src/simulation_client.py --simulation-mode
 ```
 
-**Wait for**: `✅ Connected to GPU server at <HOST_IP>:8888`
+**Wait for**: `Connected to GPU server at <HOST_IP>:8888`
 
-## 🎯 Verify Everything Works
+## Verify Everything Works
 
 **Test the complete pipeline (NEW: Organized test structure):**
 
@@ -158,11 +158,11 @@ python3 src/simulation_client.py --test-connection
 # ✅ Complete pipeline functional
 ```
 
-## 🎉 Success! What's Next?
+## Success! What's Next?
 
 Your hybrid system is now running! Here's what you can do:
 
-### 🧠 Train a New Model
+### Train a New Model
 ```bash
 # On Host
 cd host_gpu_system
@@ -171,7 +171,7 @@ python3 src/training_pipeline.py
 # Monitor with built-in metrics (check data/logs/)
 ```
 
-### 🤖 Run Robot Simulation
+### Run Robot Simulation
 ```bash  
 # On VM - full robot simulation
 cd vm_simulation_system
@@ -182,7 +182,7 @@ python3 src/enhanced_robot_controller.py  # Direct robot testing
 python3 src/enhanced_camera_handler.py    # Camera testing
 ```
 
-### 📊 Monitor Performance
+### Monitor Performance
 ```bash
 # Check system logs (structured logging)
 # Host logs: host_gpu_system/data/logs/
@@ -193,7 +193,7 @@ cat host_gpu_system/config/*.yaml
 cat vm_simulation_system/config/*.yaml
 ```
 
-### 🔧 Development Mode
+### Development Mode
 ```bash
 # Run organized integration tests anytime:
 cd tests
@@ -205,7 +205,7 @@ python3 simple_deployment_test.py    # Quick deployment check
 # All tests should always pass - system is verified!
 ```
 
-## 🆘 Quick Troubleshooting
+## Quick Troubleshooting
 
 **"Import Error" or "Module Not Found":**
 ```bash
@@ -221,7 +221,7 @@ python3 --version  # Should be 3.7+
 **"Connection Refused" Error:**
 ```bash
 # Check if GPU server is running:
-# Host should show: "🖥️ GPU Server started on 0.0.0.0:8888"
+# Host should show: "GPU Server started on 0.0.0.0:8888"
 
 # Test connection from VM:
 telnet <HOST_IP> 8888
@@ -258,18 +258,13 @@ source /opt/ros/melodic/setup.bash
 # For production: install real ROS/Webots for full performance
 ```
 
-## 📞 Need Help?
+## Need Help?
 
 1. **Run Integration Tests**: Both systems have comprehensive tests that verify everything works
    ```bash
    python3 integration_test.py      # Host: Should show 8/8 tests pass
    python3 vm_integration_test.py   # VM: Should show 10/10 tests pass
    ```
-
-2. **Check System Status**: Review the integration reports
-   - [`FINAL_INTEGRATION_STATUS.md`](FINAL_INTEGRATION_STATUS.md) - Overall system status
-   - [`host_gpu_system/ISSUES_FIXED_REPORT.md`](host_gpu_system/ISSUES_FIXED_REPORT.md) - Host system details
-   - [`vm_simulation_system/VM_INTEGRATION_REPORT.md`](vm_simulation_system/VM_INTEGRATION_REPORT.md) - VM system details
 
 3. **Verify Configuration**: Check YAML config files are properly formatted
    ```bash
@@ -282,20 +277,15 @@ source /opt/ros/melodic/setup.bash
 
 ---
 
-**🎯 Total Setup Time: ~15 minutes**  
-**🚀 System Status: PRODUCTION READY - All Tests Passing!**
+**Total Setup Time: ~15 minutes**  
+**System Status: PRODUCTION READY - All Tests Passing!**
 
-**✅ What You Just Set Up:**
+**What You Just Set Up:**
 - **Host GPU System**: DDPG neural network with professional architecture
 - **VM Simulation System**: Complete UR3 robot simulation with kinematics
 - **Integration**: Socket-based communication between systems
 - **Testing**: 18 comprehensive integration tests (all passing)
 - **Development**: Full simulation mode - no external dependencies needed
 
-**Next Steps:**
-- Read [`FINAL_INTEGRATION_STATUS.md`](FINAL_INTEGRATION_STATUS.md) for complete system overview
-- Explore [`host_gpu_system/`](host_gpu_system/) for deep learning components  
-- Check [`vm_simulation_system/`](vm_simulation_system/) for robotics components
-- Review integration test reports for technical details
 
-**🤖 Ready for Advanced Robotics Research!** 🎉
+ 
