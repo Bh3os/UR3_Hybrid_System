@@ -562,10 +562,9 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 
 ##  Additional Documentation
 
-- [`host_gpu_system/README.md`](host_gpu_system/README.md) - Detailed host setup
-- [`vm_simulation_system/README.md`](vm_simulation_system/README.md) - Detailed VM setup  
-- [`shared_resources/protocols.md`](shared_resources/protocols.md) - Communication protocols
-- [`SETUP_GUIDE.md`](SETUP_GUIDE.md) - Step-by-step installation guide
+- [`host_gpu_system/README.md`](https://github.com/Bh3os/UR3_Hybrid_System/blob/main/UR3_Hybrid_System/host_gpu_system/README.md) - Detailed host setup
+- [`vm_simulation_system/README.md`](https://github.com/Bh3os/UR3_Hybrid_System/blob/main/UR3_Hybrid_System/vm_simulation_system/README.md) - Detailed VM setup  
+
 
 ##  Usage Workflow
 
