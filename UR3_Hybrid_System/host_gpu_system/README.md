@@ -1,9 +1,9 @@
 # Host GPU System Documentation
 
-## 🖥️ Overview
+##  Overview
 This module runs on your **Windows host machine** with the **RTX A6000 GPU** and handles all deep learning computations for the UR3 grasping system.
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 Host GPU System (Windows)
@@ -14,7 +14,7 @@ Host GPU System (Windows)
 └── Configuration ─────────── Network & model settings
 ```
 
-## 📁 Directory Structure
+##  Directory Structure
 
 ```
 host_gpu_system/
@@ -24,7 +24,7 @@ host_gpu_system/
 ├── gpu_test.py           # GPU verification script
 │
 ├── src/                  # Source code
-│   ├── gpu_server.py     # 🌟 Main GPU server
+│   ├── gpu_server.py     #  Main GPU server
 │   ├── neural_network.py # CNN architecture
 │   ├── training.py       # RL training loop
 │   ├── data_pipeline.py  # Data processing
@@ -49,7 +49,7 @@ host_gpu_system/
     └── logs/           # Training logs
 ```
 
-## ⚙️ Module Components
+##  Module Components
 
 ### 1. GPU Server (`src/gpu_server.py`)
 **Purpose**: Main communication hub receiving data from VM and returning predictions
@@ -109,7 +109,7 @@ Input: RGBD Image (4 channels, 480x640)
 - Memory management
 - CUDA tensor operations
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Windows 10/11 (64-bit)
@@ -168,7 +168,7 @@ model:
   device: "cuda:0"        # GPU device
 ```
 
-## 🏃‍♂️ Running the System
+##  Running the System
 
 ### Start GPU Server
 ```powershell
@@ -182,9 +182,9 @@ venv\Scripts\activate
 python src/gpu_server.py
 
 # Expected output:
-# 🚀 GPU Server initialized on cuda:0
-# 📡 Listening for VM connection on 192.168.1.100:8888
-# 🔄 Server started, waiting for VM connections...
+#  GPU Server initialized on cuda:0
+#  Listening for VM connection on 192.168.1.100:8888
+#  Server started, waiting for VM connections...
 ```
 
 ### Monitor Performance
@@ -199,7 +199,7 @@ python src/utils/monitor.py
 python src/utils/visualization.py
 ```
 
-## 🔧 Configuration Options
+##  Configuration Options
 
 ### Network Settings
 - **Port**: Default 8888 (ensure firewall allows)
@@ -219,7 +219,7 @@ python src/utils/visualization.py
 - **Model Optimization**: Export to TensorRT for production
 - **Batch Processing**: Process multiple images together
 
-## 📊 Performance Monitoring
+## Performance Monitoring
 
 ### Key Metrics
 - **Inference Speed**: Target 50-100 FPS
@@ -234,7 +234,7 @@ All operations are logged to `data/logs/`:
 - `performance.log`: Performance metrics
 - `errors.log`: Error tracking
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -270,7 +270,7 @@ model.half()  # FP16 precision
 3. **Network**: Use image compression for faster transfer
 4. **Storage**: Use NVMe SSD for model/data storage
 
-## 🔗 Integration Points
+## Integration Points
 
 ### VM Communication
 - **Input**: RGBD images from VM simulation
@@ -285,7 +285,7 @@ VM Simulation → Host GPU → Neural Network → Prediction → VM Robot
 Training Data ← Performance Metrics ← Execution Results
 ```
 
-## 📈 Expected Performance
+##  Expected Performance
 
 With RTX A6000 and optimized settings:
 - **Inference Speed**: 80-120 FPS
@@ -293,7 +293,7 @@ With RTX A6000 and optimized settings:
 - **Memory Usage**: 8-16GB VRAM
 - **Network Latency**: 1-3ms to VM
 
-## 🔄 Maintenance
+## Maintenance
 
 ### Regular Tasks
 - Monitor GPU temperature and usage
