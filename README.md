@@ -4,8 +4,8 @@
 
 This hybrid architecture for UR3 robotic grasping combines **cutting-edge deep reinforcement learning** with **real-time physics simulation**, split across two optimized environments:
 
-- ** Host Machine (Windows)**: RTX A6000 GPU for neural network inference, training, and high-performance computing
-- ** Virtual Machine (Ubuntu)**: ROS Melodic + Webots for realistic robot simulation and control
+- **Host Machine (Windows)**: RTX A6000 GPU for neural network inference, training, and high-performance computing
+- **Virtual Machine (Ubuntu)**: ROS Melodic + Webots for realistic robot simulation and control
 
 **Key Features:**
 -  **High Performance**: Leverages RTX A6000 for 100+ FPS inference
@@ -85,7 +85,7 @@ UR3_Hybrid_System/
 │   │   └── test_system.launch            # Testing & validation
 │   └──  webots_worlds/                 # Webots simulation worlds
 │      └── ur3_grasping_world.wbt        # Main simulation environment
-│── 📋 README.md  
+│──  README.md  
 
 ```
 
